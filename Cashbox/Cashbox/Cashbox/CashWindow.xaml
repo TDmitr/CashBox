@@ -1,0 +1,42 @@
+﻿<Window x:Class="Cashbox.CashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cashbox"
+        mc:Ignorable="d"
+         Title="Cashbox" Height="600" Width="900" Loaded="CashWindow_OnLoaded"
+        Style="{StaticResource WindowStyle}">
+    <Grid>
+        <DataGrid Name="GridProducts" AutoGenerateColumns="True"  Height="356" Width="450" Margin="20,129,0,0" Style="{DynamicResource DataGrid}" SelectionChanged="GridProducts_OnSelectionChanged" />
+        <GroupBox x:Name="AddGroupBox" Header="Add product by id" Margin="490,45,0,0"  Width="370" Height="195" Style="{DynamicResource Group}"/>
+        <TextBox x:Name="IdBox" Margin="673,96,0,0" Width="130" Style="{DynamicResource TextBoxStyle}" IsEnabled="False"/>
+        <TextBox x:Name="AmountBox" Margin="673,129,0,0" Width="130" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBlock x:Name="LoginText"  Margin="543,98,0,0" Text="Product ID" Style="{StaticResource KassaTextBlock}"/>
+        <TextBlock x:Name="PasswordText" Margin="543,134,0,0" Text="Product Amount" Style="{StaticResource KassaTextBlock}" RenderTransformOrigin="0.752,0.686"/>
+        <Button x:Name="AddButton" Content="Add product" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,91,356" Style="{DynamicResource KassaButton}" Click="AddButton_OnClick"/>
+        <DataGrid x:Name="GridProductsPay" Height="175" Width="370" Margin="490,255,0,0" Style="{DynamicResource DataGrid}">
+            <!--<DataGrid.Columns>
+                <DataGridTextColumn Width="25" IsReadOnly="True" Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Width="195" IsReadOnly="True" Header="Product" Binding="{Binding Product}"/>
+                <DataGridTextColumn Width="45" IsReadOnly="True" Header="Price" Binding="{Binding Price}"/>
+
+                <DataGridTextColumn Width="55" IsReadOnly="True" Header="Amount" Binding="{Binding Amount}"/>
+                <DataGridTextColumn Width="50" IsReadOnly="True" Header="Sum" Binding="{Binding Sum}"/>
+                
+            </DataGrid.Columns>-->
+        </DataGrid>
+        <Button x:Name="EndPay" Content="Print check" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,34,32" Style="{DynamicResource KassaButton}" Height="25" Width="134"/>
+        <Button x:Name="Discard" Background="OrangeRed" Content="Discard" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,304,32" Style="{DynamicResource KassaButton}" Click="Discard_OnClick"/>
+        <Button x:Name="Logout" Content="Log Out" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,760,32" Style="{DynamicResource KassaButton}" Click="Logout_OnClick"/>
+        <Button x:Name="Undo" Content="Delete last row" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,260,69" Style="{DynamicResource KassaButton}" Width="144" Background="White" Foreground="DarkSlateBlue" Click="Undo_OnClick"/>
+        <TextBlock x:Name="TotalText"  Margin="726,444,0,0" Text="Total:" Style="{StaticResource KassaTextBlock}" RenderTransformOrigin="0.359,-0.278" FontSize="18"/>
+        <TextBlock x:Name="TotalPrice"  Margin="726,464,0,0" Padding="5,1,1,5" Text="0" Style="{StaticResource KassaTextBlock}" RenderTransformOrigin="0.359,-0.278" TextWrapping="Wrap" FontSize="18"/>
+        <TextBlock x:Name="TotalCurrency"  Margin="780,468,0,0" Text="USD" Style="{StaticResource KassaTextBlock}" RenderTransformOrigin="0.359,-0.278" Height="18" Width="66"/>
+        <TextBox x:Name="IdBox_Search" Margin="211,45,0,0" Width="190" Style="{DynamicResource TextBoxStyle}" KeyDown="IdBox_Search_OnKeyDown"/>
+        <TextBlock x:Name="SearchText"  Margin="99,45,0,0" Text="Search ID:" Style="{StaticResource KassaTextBlock}" FontSize="18" RenderTransformOrigin="0.024,0.435"/>
+        <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,493,455" Style="{DynamicResource KassaButton}" Click="Refresh_OnClick"/>
+
+
+    </Grid>
+</Window>

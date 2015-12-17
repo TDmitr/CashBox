@@ -1,0 +1,21 @@
+﻿<Window x:Class="Cashbox.PrintCheck"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cashbox"
+        mc:Ignorable="d"
+        Title="PrintCheck" Height="200" Width="353" Style="{StaticResource WindowStyle}" Loaded="PrintCheck_OnLoaded">
+    <Grid>
+        <TextBox x:Name="PABox" Margin="170,76,0,0" Width="150" Style="{DynamicResource TextBoxStyle}" KeyDown="PABox_OnKeyDown"/>
+        <TextBlock x:Name="PA"  Margin="30,79,0,0" Text="Payment amount:" Style="{StaticResource KassaTextBlock}"  />
+        <TextBlock x:Name="Total"  Margin="30,30,0,0" Text="Total:" Style="{StaticResource KassaTextBlock}" />
+        <TextBlock x:Name="Count"  Margin="30,53,0,0" Text="Number of products in check:" Style="{StaticResource KassaTextBlock}" />
+        <TextBlock x:Name="TotalResult"  Margin="0,35,69,0" Text="0"  HorizontalAlignment="Right" Style="{StaticResource KassaTextBlock}"  />
+        <TextBlock x:Name="NumberResult"  Margin="0,53,69,0" Text="0" HorizontalAlignment="Right" Style="{StaticResource KassaTextBlock}"  />
+        <TextBlock Margin="0,35,27,0" Text="USD"  HorizontalAlignment="Right" Style="{StaticResource KassaTextBlock}" RenderTransformOrigin="1.414,0.686"  />
+        <Button x:Name="Pay" Content="Pay" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,207,21" Style="{DynamicResource KassaButton}" Click="Pay_OnClick" />
+        <Button x:Name="Print" Content="Print check" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,37,21" Style="{DynamicResource KassaButton}" />
+
+    </Grid>
+</Window>
